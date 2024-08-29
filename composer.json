@@ -1,0 +1,64 @@
+{
+    "name": "zacksmash/laravel-softdelete-routes",
+    "description": "Restore and Erase resource actions",
+    "keywords": [
+        "laravel",
+        "route",
+        "actions",
+        "resource",
+        "restore",
+        "erase"
+    ],
+    "homepage": "https://github.com/zacksmash/laravel-softdelete-routes",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Zack Warren",
+            "email": "me@zackthe.dev",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": "^8.2",
+        "spatie/laravel-package-tools": "^1.16",
+        "illuminate/contracts": "^10.0||^11.0",
+        "illuminate/routing": "^10.0||^11.0"
+    },
+    "require-dev": {
+        "laravel/pint": "^1.14",
+        "orchestra/testbench": "^9.3",
+        "pestphp/pest": "^2.34",
+        "pestphp/pest-plugin-arch": "^2.7",
+        "pestphp/pest-plugin-laravel": "^2.3"
+    },
+    "autoload": {
+        "psr-4": {
+            "Zacksmash\\LaravelRouteActions\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Tests\\": "tests/"
+        }
+    },
+    "scripts": {
+        "test": "vendor/bin/pest",
+        "test-coverage": "vendor/bin/pest --coverage",
+        "format": "vendor/bin/pint"
+    },
+    "config": {
+        "sort-packages": true,
+        "allow-plugins": {
+            "pestphp/pest-plugin": true
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Zacksmash\\LaravelRouteActions\\Providers\\RoutingServiceProvider"
+            ]
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}
