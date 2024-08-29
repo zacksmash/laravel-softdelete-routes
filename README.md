@@ -1,5 +1,5 @@
 # Laravel Soft Delete Routes
-[![Tests](https://github.com/zacksmash/laravel-soft-delete-routes/actions/workflows/tests.yml/badge.svg)](https://github.com/zacksmash/laravel-soft-delete-routes/actions/workflows/tests.yml)
+[![Tests](https://github.com/zacksmash/laravel-softdelete-routes/actions/workflows/tests.yml/badge.svg)](https://github.com/zacksmash/laravel-softdelete-routes/actions/workflows/tests.yml)
 
 ## Intro
 This package gives you some helper methods on route resources to handle extra actions for restoring and force deleting a model.
