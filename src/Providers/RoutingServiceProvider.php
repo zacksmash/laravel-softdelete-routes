@@ -1,6 +1,6 @@
 <?php
 
-namespace Zacksmash\LaravelRouteActions\Providers;
+namespace Zacksmash\SoftDeleteRoutes\Providers;
 
 use Illuminate\Foundation\Application;
 use Illuminate\Routing\Router;
@@ -14,7 +14,7 @@ class RoutingServiceProvider extends ServiceProvider
     public function register(): void
     {
         $this->app->extend(Router::class, function (Router $router, Application $app) {
-            return new \Zacksmash\LaravelRouteActions\Routing\Router($router, $app);
+            return new \Zacksmash\SoftDeleteRoutes\Routing\Router($router, $app);
         });
     }
 

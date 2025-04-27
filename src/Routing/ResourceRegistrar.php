@@ -1,31 +1,23 @@
 <?php
 
-namespace Zacksmash\LaravelRouteActions\Routing;
+namespace Zacksmash\SoftDeleteRoutes\Routing;
 
 use Illuminate\Routing\ResourceRegistrar as BaseRegistrar;
 
 class ResourceRegistrar extends BaseRegistrar
 {
     /**
-     * Create a new resource registrar instance.
+     * Get or set the resource defaults used in resourcful controllers.
+     *
+     * @return array|void
      */
-    public function __construct(Router $router)
+    public function resourceDefaults(?string $method = null)
     {
-        parent::__construct($router);
+        if (! $method) {
+            return $this->resourceDefaults;
+        }
 
-        self::$verbs = [
-            'restore' => 'restore',
-            'erase' => 'erase',
-            ...parent::$verbs,
-        ];
-    }
-
-    /**
-     * Add a resource method to the resource defaults.
-     */
-    public function setResourceDefault(string $method): string
-    {
-        return $this->resourceDefaults[] = $method;
+        $this->resourceDefaults[] = $method;
     }
 
     /**

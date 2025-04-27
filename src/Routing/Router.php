@@ -1,6 +1,6 @@
 <?php
 
-namespace Zacksmash\LaravelRouteActions\Routing;
+namespace Zacksmash\SoftDeleteRoutes\Routing;
 
 use Illuminate\Routing\Router as BaseRouter;
 

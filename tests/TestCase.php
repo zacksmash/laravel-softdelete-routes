@@ -3,7 +3,7 @@
 namespace Tests;
 
 use Orchestra\Testbench\TestCase as BaseTestCase;
-use Zacksmash\LaravelRouteActions\Providers\RoutingServiceProvider;
+use Zacksmash\SoftDeleteRoutes\Providers\RoutingServiceProvider;
 
 class TestCase extends BaseTestCase
 {

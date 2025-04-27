@@ -33,7 +33,7 @@
     },
     "autoload": {
         "psr-4": {
-            "Zacksmash\\LaravelRouteActions\\": "src/"
+            "Zacksmash\\SoftDeleteRoutes\\": "src/"
         }
     },
     "autoload-dev": {
@@ -55,7 +55,7 @@
     "extra": {
         "laravel": {
             "providers": [
-                "Zacksmash\\LaravelRouteActions\\Providers\\RoutingServiceProvider"
+                "Zacksmash\\SoftDeleteRoutes\\Providers\\RoutingServiceProvider"
             ]
         }
     },

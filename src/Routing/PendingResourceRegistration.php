@@ -1,30 +1,19 @@
 <?php
 
-namespace Zacksmash\LaravelRouteActions\Routing;
+namespace Zacksmash\SoftDeleteRoutes\Routing;
 
 use Illuminate\Routing\PendingResourceRegistration as BasePendingResourceRegistration;
 
 class PendingResourceRegistration extends BasePendingResourceRegistration
 {
     /**
-     * Create a new pending resource registration instance.
-     *
-     * @param  \Illuminate\Routing\ResourceRegistrar  $registrar
-     * @param  string  $name
-     * @param  string  $controller
-     * @return void
-     */
-    public function __construct($registrar, $name, $controller, array $options)
-    {
-        parent::__construct($registrar, $name, $controller, $options);
-    }
-
-    /**
      * Add a restore method to the resource.
      */
     public function withRestore(): self
     {
-        $this->registrar->setResourceDefault('restore');
+        $this->registrar->verbs(['restore' => 'restore']);
+
+        $this->registrar->resourceDefaults('restore');
 
         $this->options['trashed']['restore'] = true;
 
@@ -36,7 +25,9 @@ class PendingResourceRegistration extends BasePendingResourceRegistration
      */
     public function withErase(): self
     {
-        $this->registrar->setResourceDefault('erase');
+        $this->registrar->verbs(['erase' => 'erase']);
+
+        $this->registrar->resourceDefaults('erase');
 
         $this->options['trashed']['erase'] = true;
 
