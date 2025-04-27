@@ -13,7 +13,9 @@ class RoutingServiceProvider extends ServiceProvider
      */
     public function register(): void
     {
-        //
+        $this->app->extend(Router::class, function (Router $router, Application $app) {
+            return new \Zacksmash\LaravelRouteActions\Routing\Router($router, $app);
+        });
     }
 
     /**
@@ -21,8 +23,6 @@ class RoutingServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
-        $this->app->extend(Router::class, function (Router $router, Application $app) {
-            return new \Zacksmash\LaravelRouteActions\Routing\Router($router, $app);
-        });
+        //
     }
 }
