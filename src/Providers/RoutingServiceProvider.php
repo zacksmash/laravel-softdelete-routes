@@ -36,8 +36,7 @@ class RoutingServiceProvider extends ServiceProvider
         });
 
         PendingResourceRegistration::macro('softDeletes', function () {
-            $this->withRestore();
-            $this->withErase();
+            RegisterRoute::with(['restore', 'erase'], $this->registrar);
 
             return $this;
         });
