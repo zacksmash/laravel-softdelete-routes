@@ -11,7 +11,13 @@ class RegisterRoute
         $actions = is_array($action) ? $action : [$action];
         $registrar = invade($registrar);
 
-        $registrar->verbs(array_combine($actions, $actions));
+        $defaultVerbs = $registrar->verbs();
+
+        $registrar->verbs(
+            $defaultVerbs + array_diff_key(
+                array_combine($actions, $actions), $defaultVerbs
+            )
+        );
 
         $registrar->resourceDefaults = array_merge(
             $registrar->resourceDefaults, $actions
